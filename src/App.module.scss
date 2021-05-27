@@ -1,0 +1,20 @@
+.App[data-theme='light'] {
+  --color-element: hsl(0, 0%, 100%);
+  --color-background: hsl(0, 0%, 98%);
+  --color-text: hsl(200, 15%, 8%);
+  --color-input: hsl(0, 0%, 52%);
+}
+
+.App[data-theme='dark'] {
+  --color-element: hsl(209, 23%, 22%);
+  --color-background: hsl(207, 26%, 17%);
+  --color-text: hsl(0, 0%, 98%);
+  --color-input: hsl(0, 0%, 52%);
+}
+
+.App {
+  background-color: var(--color-background);
+
+  transition: all 750ms;
+  transition-delay: all 750ms;
+}
