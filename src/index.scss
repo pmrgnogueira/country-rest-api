@@ -1,0 +1,25 @@
+:root  {
+  // Initial Css Vars
+  --clight-element: hsl(0, 0%, 100%);
+  --clight-background: hsl(0, 0%, 98%);
+  --clight-text: hsl(200, 15%, 8%);
+  --clight-input: hsl(0, 0%, 52%);
+
+  --cdark-element: hsl(209, 23%, 22%);
+  --cdark-background: hsl(207, 26%, 17%);
+  --cdark-text: hsl(0, 0%, 98%);
+  --cdark-input: hsl(0, 0%, 52%);
+
+  --size-mobile: 375px;
+  --size-desktop: 1440px;
+
+  --base-font-size: 14px;
+  --detail-page-fontsize: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
