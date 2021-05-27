@@ -1,20 +1,23 @@
+@import './helper/mixins.scss';
+
 .App[data-theme='light'] {
-  --color-element: hsl(0, 0%, 100%);
-  --color-background: hsl(0, 0%, 98%);
-  --color-text: hsl(200, 15%, 8%);
-  --color-input: hsl(0, 0%, 52%);
+  --color-element: #ffffff;
+  --color-background: #fafafa;
+  --color-text: #111517;
+  --color-input: #858585;
 }
 
 .App[data-theme='dark'] {
-  --color-element: hsl(209, 23%, 22%);
-  --color-background: hsl(207, 26%, 17%);
-  --color-text: hsl(0, 0%, 98%);
-  --color-input: hsl(0, 0%, 52%);
+  --color-element: #2b3945;
+  --color-background: #202c37;
+  --color-text: #fafafa;
+  --color-input: #858585;
 }
 
 .App {
-  background-color: var(--color-background);
+  @include transition;
 
-  transition: all 750ms;
-  transition-delay: all 750ms;
+  background-color: var(--color-background);
+  height: 100%;
+  width: 100%;
 }

@@ -5,20 +5,18 @@ import CountryListing from './pages/CountryListing';
 import CountryDetails from './pages/CountryDetails';
 import Header from './components/Header';
 import classes from './App.module.scss';
-
-const THEME_LIGHT = 'light';
-const THEME_DARK = 'dark';
+import { THEME } from './helper/contants';
 
 function App() {
-  const [theme, setTheme] = useState(THEME_LIGHT);
+  const [theme, setTheme] = useState(THEME.LIGHT);
 
   const toggleThemeHandler = () => {
-    setTheme(prev => (prev === THEME_LIGHT ? THEME_DARK : THEME_LIGHT));
+    setTheme(prev => (prev === THEME.LIGHT ? THEME.DARK : THEME.LIGHT));
   };
 
   return (
     <main className={classes.App} data-theme={theme}>
-      <Header onThemeToggle={toggleThemeHandler} />
+      <Header onThemeToggle={toggleThemeHandler} theme={theme} />
       <Switch>
         <Route path='/' exact>
           <CountryListing />

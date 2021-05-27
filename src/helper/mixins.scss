@@ -1,0 +1,13 @@
+@import './variables.scss';
+
+@mixin transition {
+  transition: all 750ms;
+  transition-delay: all 750ms;
+}
+
+@mixin media($size) {
+  $mediaSize: map-get($brakpoints, $size);
+  @media only screen and (min-width: $mediaSize) {
+    @content;
+  }
+}

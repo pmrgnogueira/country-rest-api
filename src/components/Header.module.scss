@@ -1,0 +1,42 @@
+@import '../helper/mixins.scss';
+
+.Header {
+  @include transition;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  background-color: var(--color-element);
+
+  @include media('tablet') {
+    padding: 1.4rem 3rem;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text);
+
+    @include media('tablet') {
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    color: var(--color-text);
+    cursor: pointer;
+
+    svg {
+      margin-right: 0.3rem;
+
+      @include media('tablet') {
+        margin-right: 0.6rem;
+      }
+    }
+  }
+}
