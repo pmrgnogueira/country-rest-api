@@ -1,0 +1,63 @@
+@import '../helper/mixins.scss';
+
+.CountryDetail {
+  @include transition;
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-size: var(--detail-page-fontsize);
+  color: var(--color-text);
+}
+
+.Img {
+  width: 50%;
+  margin-right: 6rem;
+}
+
+.Info {
+  width: 50%;
+  align-self: center;
+  color: inherit;
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+  }
+
+  .Details {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    height: 150px;
+    margin-bottom: 2rem;
+    margin-right: 20px;
+    color: inherit;
+
+    p {
+      margin-bottom: 0.8rem;
+    }
+    span {
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  .Borders {
+    display: flex;
+    flex-wrap: wrap;
+    color: inherit;
+
+    p {
+      font-weight: var(--fw-medium);
+      margin-right: 1.6rem;
+      align-self: baseline;
+    }
+
+    span {
+      margin-right: 0.4rem;
+      margin-bottom: 1rem;
+      align-self: baseline;
+    }
+  }
+}

@@ -3,39 +3,56 @@
 .Header {
   @include transition;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.8rem 1rem;
+  position: relative;
+  z-index: 1;
+
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   background-color: var(--color-element);
 
-  @include media('tablet') {
-    padding: 1.4rem 3rem;
-  }
-
-  h1 {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--color-text);
+  .Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8rem 1rem;
 
     @include media('tablet') {
-      font-size: 1.2rem;
+      padding: 1.4rem 3rem;
     }
-  }
 
-  button {
-    border: none;
-    background-color: transparent;
-    display: flex;
-    color: var(--color-text);
-    cursor: pointer;
+    @include media('desktop') {
+      max-width: 1440px;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-    svg {
-      margin-right: 0.3rem;
+    h1 {
+      @include transition;
+
+      font-weight: var(--fw-bold);
+      font-size: 1rem;
+      color: var(--color-text);
 
       @include media('tablet') {
-        margin-right: 0.6rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    button {
+      @include transition;
+
+      display: flex;
+      border: none;
+      background-color: transparent;
+      color: var(--color-text);
+      font-weight: var(--fw-medium);
+      cursor: pointer;
+
+      svg {
+        margin-right: 0.3rem;
+
+        @include media('tablet') {
+          margin-right: 0.6rem;
+        }
       }
     }
   }

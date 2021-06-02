@@ -1,0 +1,16 @@
+@import '../../helper/mixins.scss';
+
+.LinkButton {
+  @include transition;
+  @include baseComponentStyle;
+
+  display: inline-flex;
+  padding: 0.6rem 1.6rem;
+  cursor: pointer;
+  text-decoration: none;
+
+  svg {
+    font-weight: var(--fw-bold);
+    margin-right: 0.4rem;
+  }
+}

@@ -1,0 +1,19 @@
+@import '../helper/mixins.scss';
+
+.Layout {
+  @include transition;
+
+  padding: 2.4rem 1rem;
+  background-color: var(--color-background);
+
+  @include media('tablet') {
+    padding: 2.4rem 3rem;
+  }
+
+  @include media('desktop') {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2.4rem 3rem;
+  }
+}

@@ -11,13 +11,24 @@
   --color-element: #2b3945;
   --color-background: #202c37;
   --color-text: #fafafa;
-  --color-input: #858585;
+  --color-input: #fafafa;
 }
 
 .App {
+  --fw-light: 300;
+  --fw-medium: 600;
+  --fw-bold: 800;
+  --fs-elements: 14px;
+  --fs-base: 16px;
+  --box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+  --base-font-size: 14px;
+  --detail-page-fontsize: 16px;
+
   @include transition;
 
   background-color: var(--color-background);
   height: 100%;
   width: 100%;
+  font-size: var(--fs-detail);
 }

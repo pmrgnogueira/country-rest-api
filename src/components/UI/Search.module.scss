@@ -1,0 +1,29 @@
+@import '../../helper/mixins.scss';
+
+.Search {
+  @include transition;
+  @include baseComponentStyle;
+
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.4rem;
+  margin-bottom: 20px;
+  color: var(--color-input);
+
+  svg {
+    flex-grow: 0;
+    margin-right: 1rem;
+    color: inherit;
+  }
+
+  input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+  }
+  ::placeholder {
+    color: inherit;
+  }
+}

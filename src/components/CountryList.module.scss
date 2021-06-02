@@ -1,0 +1,13 @@
+@import '../helper/mixins.scss';
+
+.CountryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 4rem;
+  padding: 0 5rem;
+
+  @include media('tablet') {
+    padding: 0;
+    flex-flow: row;
+  }
+}

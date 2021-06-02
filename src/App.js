@@ -16,7 +16,7 @@ function App() {
 
   return (
     <main className={classes.App} data-theme={theme}>
-      <Header onThemeToggle={toggleThemeHandler} theme={theme} />
+      <Header toggleTheme={toggleThemeHandler} theme={theme} />
       <Switch>
         <Route path='/' exact>
           <CountryListing />
@@ -33,3 +33,11 @@ function App() {
 }
 
 export default App;
+
+/**
+ * TODO: Detail Page
+ * TODO: useFetch to fetch data
+ * TODO: useDebounce to debounce
+ * TODO: Create Context in order to have the global search therm being used to avoid loosing past selection on page change
+ *
+ */

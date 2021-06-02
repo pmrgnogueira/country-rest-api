@@ -1,0 +1,13 @@
+@import '../helper/mixins.scss';
+
+.Controlers {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  @include media('tablet') {
+    flex-flow: row;
+  }
+}

@@ -1,0 +1,16 @@
+@import '../../helper/mixins.scss';
+
+.Select {
+  @include transition;
+  @include baseComponentStyle;
+
+  display: inline-block;
+  padding: 1rem;
+
+  select {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: inherit;
+  }
+}
