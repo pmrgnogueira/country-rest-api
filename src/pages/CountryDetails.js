@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Layout from '../components/Layout';
-import CountryDetail from '../components/CountryDetail';
+import CountryDetail from '../components/CountryDetail/CountryDetail';
 import Loading from '../components/UI/Loading';
 
 const CountryDetails = () => {
@@ -34,8 +34,7 @@ const CountryDetails = () => {
 
   return (
     <Layout>
-      <Loading />
-      {loading && <p>Loading countries...</p>}
+      {loading && <Loading />}
       {error && <p>Something went wrong..</p>}
       {!loading && !error && country && <CountryDetail country={country} />}
     </Layout>

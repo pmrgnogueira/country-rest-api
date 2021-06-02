@@ -8,7 +8,7 @@ const Loading = () => {
         <div className={classes.Line}></div>
         <div className={classes.Line}></div>
       </div>
-      <p>Loading...</p>
+      <p>Loading..</p>
     </section>
   );
 };

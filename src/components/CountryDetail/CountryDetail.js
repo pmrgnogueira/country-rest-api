@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 
-import Tag from './UI/Tag';
-import LinkButton from './UI/LinkButton';
+import Tag from '../UI/Tag';
+import LinkButton from '../UI/LinkButton';
 import classes from './CountryDetail.module.scss';
-import FilteringContext from '../store/filter-context';
+import FilteringContext from '../../store/filter-context';
 
 const CountryDetail = ({ country }) => {
   const { countries } = useContext(FilteringContext);

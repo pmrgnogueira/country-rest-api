@@ -1,9 +1,10 @@
 import { useState, useCallback, useEffect, useContext } from 'react';
 
-import CountryList from '../components/CountryList';
+import CountryList from '../components/CountryListing/CountryList';
 import Layout from '../components/Layout';
-import CountryControls from '../components/CountryControls';
+import CountryControls from '../components/CountryListing/CountryControls';
 import FilteringContext from '../store/filter-context';
+import Loading from '../components/UI/Loading';
 
 const CountryListing = () => {
   const {
@@ -52,7 +53,7 @@ const CountryListing = () => {
   return (
     <Layout>
       <CountryControls countries={countries} onfilter={updatefilterCountries} />
-      {loading && <p>Loading countries...</p>}
+      {loading && <Loading />}
       {error && <p>Something went wrong..</p>}
       {!loading && !error && <CountryList countries={countriesToList} />}
     </Layout>

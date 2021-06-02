@@ -35,6 +35,7 @@ function App() {
 export default App;
 
 /**
+ * TODO: Redo the Git repository
  * TODO: Detail Page
  * TODO: useFetch to fetch data
  * TODO: useDebounce to debounce

@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import classes from './CountryControls.module.scss';
-import Search from './UI/Search';
-import Select from './UI/Select';
-import FilteringContext from '../store/filter-context';
+import Search from '../UI/Search';
+import Select from '../UI/Select';
+import FilteringContext from '../../store/filter-context';
 
 const CountryControls = ({ onfilter }) => {
   const {
