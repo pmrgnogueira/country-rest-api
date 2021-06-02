@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import CountryListing from './pages/CountryListing';
 import CountryDetails from './pages/CountryDetails';
-import Header from './components/Header';
+import Header from './components/UI/Header';
 import classes from './App.module.scss';
 import { THEME } from './helper/contants';
 
@@ -38,6 +38,7 @@ export default App;
  * TODO: Detail Page
  * TODO: useFetch to fetch data
  * TODO: useDebounce to debounce
- * TODO: Create Context in order to have the global search therm being used to avoid loosing past selection on page change
- *
+ * TODO: build Loading component
+ * TODO: build Error component
+ * TODO: build 404 page
  */

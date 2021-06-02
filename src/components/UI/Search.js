@@ -3,8 +3,8 @@ import { HiSearch } from 'react-icons/hi';
 
 import classes from './Search.module.scss';
 
-const Search = ({ searchTherm, onSearch }) => {
-  const [searchResults, setSearchResults] = useState(searchTherm);
+const Search = ({ value, onSearch }) => {
+  const [searchResults, setSearchResults] = useState(value);
 
   const changeHandler = e => {
     const { value } = e.target;

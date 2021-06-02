@@ -1,8 +1,12 @@
+import { useContext } from 'react';
+
 import Tag from './UI/Tag';
 import LinkButton from './UI/LinkButton';
 import classes from './CountryDetail.module.scss';
+import FilteringContext from '../store/filter-context';
 
 const CountryDetail = ({ country }) => {
+  const { countries } = useContext(FilteringContext);
   const {
     flag,
     name,
@@ -18,13 +22,11 @@ const CountryDetail = ({ country }) => {
   } = country;
 
   function getBorderTags(borders) {
-    const countryList = sessionStorage.getItem('@country-rest-api/countries');
-
     return borders.map(border => {
-      const country = JSON.parse(countryList).filter(
-        country => country.alpha3Code === border
-      )[0];
-      return <Tag key={country.name}>{country.name}</Tag>;
+      const borderCountry = countries.filter(c => {
+        return c.alpha3Code === border;
+      })[0];
+      return <Tag key={borderCountry.name}>{borderCountry.name}</Tag>;
     });
   }
 
@@ -71,7 +73,7 @@ const CountryDetail = ({ country }) => {
               {languages.map(lang => lang.name).join(', ') || 'N/a'}
             </p>
           </div>
-          {borders.length ? (
+          {borders.length && countries.length ? (
             <div className={classes.Borders}>
               <p>Border Countries:</p>
               {getBorderTags(borders)}

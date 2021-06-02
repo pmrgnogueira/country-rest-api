@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Layout from '../components/Layout';
 import CountryDetail from '../components/CountryDetail';
+import Loading from '../components/UI/Loading';
 
 const CountryDetails = () => {
   const [country, setCountry] = useState(null);
@@ -33,6 +34,7 @@ const CountryDetails = () => {
 
   return (
     <Layout>
+      <Loading />
       {loading && <p>Loading countries...</p>}
       {error && <p>Something went wrong..</p>}
       {!loading && !error && country && <CountryDetail country={country} />}

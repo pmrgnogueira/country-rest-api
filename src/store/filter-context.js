@@ -1,36 +1,46 @@
 import { createContext, useState } from 'react';
 
 const FilteringContext = createContext({
-  isDataFiltered: false,
+  countries: [],
+  filteredCountries: [],
   filterTherm: '',
   isFilteredBySelect: false
 });
 
 export const FilteringContextProvider = ({ children }) => {
-  const [isDataFiltered, setIsDataFiltered] = useState(false);
-  const [filterTherm, setFilterTherm] = useState(false);
+  const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
+
+  const [filterTherm, setFilterTherm] = useState('');
   const [isFilteredBySelect, setIsFilteredBySelect] = useState(false);
 
-  const filterHandler = (search, isSelect) => {
-    setFilterTherm(search);
-    setIsFilteredBySelect(isSelect);
-    setIsDataFiltered(true);
+  const updateCountries = countries => {
+    setCountries(countries);
   };
 
-  const clearFiltering = () => {
-    setFilterTherm('');
-    setIsFilteredBySelect(false);
-    setIsDataFiltered(false);
+  const updateFilteredCountries = filtered => {
+    setFilteredCountries(filtered);
+  };
+
+  const filterHandler = search => {
+    setFilterTherm(search);
+  };
+
+  const selectHandler = isSelect => {
+    setIsFilteredBySelect(isSelect);
   };
 
   return (
     <FilteringContext.Provider
       value={{
-        isDataFiltered,
+        countries,
+        updateCountries,
+        filteredCountries,
+        updateFilteredCountries,
         isFilteredBySelect,
         filterTherm,
         filterHandler,
-        clearFiltering
+        selectHandler
       }}>
       {children}
     </FilteringContext.Provider>

@@ -1,11 +1,29 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import classes from './CountryControls.module.scss';
 import Search from './UI/Search';
 import Select from './UI/Select';
+import FilteringContext from '../store/filter-context';
 
-const CountryControls = ({ countries, onfilter }) => {
-  const [currentSearch, setCurrentSearch] = useState('');
-  const [currentSelected, setCurrentSelected] = useState('all');
+const CountryControls = ({ onfilter }) => {
+  const {
+    countries,
+    filterTherm,
+    filterHandler,
+    isFilteredBySelect,
+    selectHandler
+  } = useContext(FilteringContext);
+
+  const searchHandler = (searchTherm, isSelect) => {
+    const regex = new RegExp('^' + searchTherm, 'i');
+    const searchParam = isSelect ? 'region' : 'name';
+    const filteredContries = countries.filter(country =>
+      country[searchParam].match(regex)
+    );
+
+    onfilter(filteredContries);
+    selectHandler(isSelect);
+    filterHandler(searchTherm);
+  };
 
   const debounce = (func, timeout = 200) => {
     let timer;
@@ -17,37 +35,18 @@ const CountryControls = ({ countries, onfilter }) => {
     };
   };
 
-  const searchHandler = searchTherm => {
-    let regex = new RegExp('^' + searchTherm);
-    onfilter(
-      countries.filter(country => {
-        let name = country.name.toLowerCase();
-        return name.match(regex);
-      })
-    );
-    setCurrentSearch(searchTherm);
-  };
-
   const debouncedfunction = debounce(searchHandler);
-
-  const selectHandler = selectValue => {
-    let regex = new RegExp(selectValue);
-    onfilter(
-      countries.filter(country => {
-        let name = country.region;
-        return name.match(regex);
-      })
-    );
-    setCurrentSelected(selectValue);
-  };
 
   return (
     <section className={classes.Controlers}>
       <Search
-        searchTherm={currentSearch}
+        value={!isFilteredBySelect && filterTherm ? filterTherm : ''}
         onSearch={searchTherm => debouncedfunction(searchTherm)}
       />
-      <Select selected={currentSelected} onSelect={selectHandler} />
+      <Select
+        value={isFilteredBySelect && filterTherm ? filterTherm : ''}
+        onSelect={searchTherm => searchHandler(searchTherm, true)}
+      />
     </section>
   );
 };
