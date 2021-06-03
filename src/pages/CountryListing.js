@@ -16,7 +16,8 @@ const CountryListing = () => {
     updateCountries,
     countries,
     filteredCountries,
-    updateFilteredCountries
+    updateFilteredCountries,
+    emptyResults
   } = useContext(FilteringContext);
   const { isLoading, error, sendRequest: fetchCountries } = useHttp();
   const countriesLength = countries.length;
@@ -32,20 +33,22 @@ const CountryListing = () => {
     fetchCountries(REQUEST_URL, transformCountries);
   }, [fetchCountries, countriesLength, updateCountries]);
 
-  const updatefilterCountries = filtered => {
-    updateFilteredCountries(filtered);
+  const updatefilterCountries = (filtered, isEmpty) => {
+    updateFilteredCountries(filtered, isEmpty);
   };
 
-  let countriesToList = filteredCountries.length
+  const countriesToList = filteredCountries.length
     ? filteredCountries
     : countries;
+  const showCountryList = !isLoading && !error && !emptyResults;
 
   return (
     <Layout>
       <CountryControls countries={countries} onfilter={updatefilterCountries} />
       {isLoading && <Loading />}
       {error && <ErrorComponent message={error} />}
-      {!isLoading && !error && <CountryList countries={countriesToList} />}
+      {emptyResults && <ErrorComponent message={'No Countries Found'} />}
+      {showCountryList && <CountryList countries={countriesToList} />}
     </Layout>
   );
 };

@@ -34,8 +34,3 @@ function App() {
 }
 
 export default App;
-
-/**
- * TODO: No countries found
- * TODO: Preencher the deliveries
- */

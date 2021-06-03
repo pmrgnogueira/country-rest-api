@@ -4,7 +4,8 @@ const FilteringContext = createContext({
   countries: [],
   filteredCountries: [],
   filterTherm: '',
-  isFilteredBySelect: false
+  isFilteredBySelect: false,
+  emptyResults: false
 });
 
 export const FilteringContextProvider = ({ children }) => {
@@ -14,12 +15,15 @@ export const FilteringContextProvider = ({ children }) => {
   const [filterTherm, setFilterTherm] = useState('');
   const [isFilteredBySelect, setIsFilteredBySelect] = useState(false);
 
+  const [emptyResults, setEmptyResults] = useState(false);
+
   const updateCountries = countries => {
     setCountries(countries);
   };
 
-  const updateFilteredCountries = filtered => {
+  const updateFilteredCountries = (filtered, isEmpty) => {
     setFilteredCountries(filtered);
+    setEmptyResults(isEmpty);
   };
 
   const filterHandler = search => {
@@ -40,7 +44,8 @@ export const FilteringContextProvider = ({ children }) => {
         isFilteredBySelect,
         filterTherm,
         filterHandler,
-        selectHandler
+        selectHandler,
+        emptyResults
       }}>
       {children}
     </FilteringContext.Provider>

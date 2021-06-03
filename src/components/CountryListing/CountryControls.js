@@ -22,7 +22,9 @@ const CountryControls = ({ onfilter }) => {
       country[searchParam].match(regex)
     );
 
-    onfilter(filteredContries);
+    let isEmptyResults = searchTherm && !filteredContries.length;
+
+    onfilter(filteredContries, isEmptyResults);
     selectHandler(isSelect);
     filterHandler(searchTherm);
   };
