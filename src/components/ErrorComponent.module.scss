@@ -1,0 +1,14 @@
+@import '../helper/mixins.scss';
+
+.ErrorComponent {
+  @include transition;
+
+  text-align: center;
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+}
+.SadEmoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-input);
+}

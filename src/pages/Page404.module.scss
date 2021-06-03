@@ -1,0 +1,22 @@
+@import '../helper/mixins.scss';
+
+.Page404 {
+  @include transition;
+
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+  font-size: 1.4rem;
+
+  h1 {
+    @include transition;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    color: var(--color-input);
+    font-weight: var(--fw-medium);
+  }
+}

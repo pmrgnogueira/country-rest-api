@@ -1,8 +1,10 @@
 import { useContext } from 'react';
+
+import FilteringContext from '../../store/filter-context';
 import classes from './CountryControls.module.scss';
 import Search from '../UI/Search';
 import Select from '../UI/Select';
-import FilteringContext from '../../store/filter-context';
+import { debouncer } from '../../helper/debouncer';
 
 const CountryControls = ({ onfilter }) => {
   const {
@@ -25,17 +27,7 @@ const CountryControls = ({ onfilter }) => {
     filterHandler(searchTherm);
   };
 
-  const debounce = (func, timeout = 200) => {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(this, args);
-      }, timeout);
-    };
-  };
-
-  const debouncedfunction = debounce(searchHandler);
+  const debouncedfunction = debouncer(searchHandler);
 
   return (
     <section className={classes.Controlers}>

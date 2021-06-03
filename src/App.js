@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import CountryListing from './pages/CountryListing';
-import CountryDetails from './pages/CountryDetails';
-import Header from './components/UI/Header';
+import CountryOverview from './pages/CountryOverview';
+import Page404 from './pages/Page404';
+import Header from './components/Header';
 import classes from './App.module.scss';
 import { THEME } from './helper/contants';
 
@@ -22,10 +23,10 @@ function App() {
           <CountryListing />
         </Route>
         <Route path='/country/:id'>
-          <CountryDetails />
+          <CountryOverview />
         </Route>
         <Route path='*'>
-          <p>404 not found</p>
+          <Page404 />
         </Route>
       </Switch>
     </main>
@@ -36,10 +37,6 @@ export default App;
 
 /**
  * TODO: Redo the Git repository
- * TODO: Detail Page
- * TODO: useFetch to fetch data
- * TODO: useDebounce to debounce
- * TODO: build Loading component
- * TODO: build Error component
- * TODO: build 404 page
+ * TODO: Do the Responsive
+ * TODO: Preencher the deliveries
  */

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import Tag from '../UI/Tag';
 import LinkButton from '../UI/LinkButton';
-import classes from './CountryDetail.module.scss';
+import classes from './CountryDetails.module.scss';
 import FilteringContext from '../../store/filter-context';
 
 const CountryDetail = ({ country }) => {
@@ -38,39 +38,39 @@ const CountryDetail = ({ country }) => {
           <img src={flag} width='100%' alt={`${name} flag`} />
         </div>
         <div className={classes.Info}>
-          <h1>{name || 'N/a'}</h1>
+          <h1>{name}</h1>
           <div className={classes.Details}>
             <p>
               <span>Native Name: </span>
-              {nativeName || 'N/a'}
+              {nativeName}
             </p>
             <p>
               <span>Population: </span>
-              {population || 'N/a'}
+              {population}
             </p>
             <p>
               <span>Region: </span>
-              {region || 'N/a'}
+              {region}
             </p>
             <p>
               <span>Sub Region: </span>
-              {subregion || 'N/a'}
+              {subregion}
             </p>
             <p>
               <span>Capital: </span>
-              {capital || 'N/a'}
+              {capital}
             </p>
             <p>
               <span>Top Level Domain: </span>
-              {topLevelDomain.join(',') || 'N/a'}
+              {topLevelDomain.join(',')}
             </p>
             <p>
               <span>Currency: </span>
-              {currencies[0].name || 'N/a'}
+              {currencies[0].name}
             </p>
             <p>
               <span>Languages: </span>
-              {languages.map(lang => lang.name).join(', ') || 'N/a'}
+              {languages.map(lang => lang.name).join(', ')}
             </p>
           </div>
           {borders.length && countries.length ? (
