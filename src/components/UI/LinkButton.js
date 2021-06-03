@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
-import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
 
 import classes from './LinkButton.module.scss';
 
-const LinkButton = ({ children }) => (
-  <Link to='/' className={classes.LinkButton}>
-    <HiOutlineArrowNarrowLeft />
+const LinkButton = ({ children, path }) => (
+  <Link to={path} className={classes.LinkButton}>
     {children}
   </Link>
 );

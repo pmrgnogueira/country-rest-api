@@ -1,9 +1,0 @@
-@import '../../helper/mixins.scss';
-
-.Tag {
-  @include transition;
-  @include baseComponentStyle;
-
-  display: inline-block;
-  padding: 0.6rem 2.4rem;
-}

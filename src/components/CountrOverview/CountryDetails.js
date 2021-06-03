@@ -1,6 +1,6 @@
 import { useContext } from 'react';
+import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
 
-import Tag from '../UI/Tag';
 import LinkButton from '../UI/LinkButton';
 import classes from './CountryDetails.module.scss';
 import FilteringContext from '../../store/filter-context';
@@ -26,13 +26,22 @@ const CountryDetail = ({ country }) => {
       const borderCountry = countries.filter(c => {
         return c.alpha3Code === border;
       })[0];
-      return <Tag key={borderCountry.name}>{borderCountry.name}</Tag>;
+      return (
+        <LinkButton
+          key={borderCountry.name}
+          path={`/country/${borderCountry.alpha3Code}`}>
+          {borderCountry.name}
+        </LinkButton>
+      );
     });
   }
 
   return (
     <>
-      <LinkButton>Back</LinkButton>
+      <LinkButton path='/'>
+        <HiOutlineArrowNarrowLeft />
+        Back
+      </LinkButton>
       <div className={classes.CountryDetail}>
         <div className={classes.Img}>
           <img src={flag} width='100%' alt={`${name} flag`} />

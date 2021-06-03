@@ -93,12 +93,12 @@
 
       @include media('large-tablet') {
         width: auto;
-        margin-bottom: auto;
+        margin-bottom: 0;
         margin-right: 1.6rem;
       }
     }
 
-    span {
+    a {
       margin-right: 0.4rem;
       margin-bottom: 1rem;
       align-self: baseline;
