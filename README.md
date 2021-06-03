@@ -10,10 +10,9 @@ Thanks for checking out my solution to the [REST Countries API Challenge](https:
 
 Feel free to look around and explore and give me feedback about what can be improved. 😁
 
-### Links
+### Link
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Country Rest API](https://country-rest-app-166880.netlify.app/)
 
 ## My process
 
