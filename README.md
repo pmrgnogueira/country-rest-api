@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
 
-## Available Scripts
+## Intro
 
-In the project directory, you can run:
+Hello! 👋
 
-### `yarn start`
+Thanks for checking out my solution to the [REST Countries API Challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Feel free to look around and explore and give me feedback about what can be improved. 😁
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Links
 
-### `yarn test`
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## My process
 
-### `yarn build`
+I followed a basic process of first outlining what were the key features, pages and components I needed to build. I also decided where I needed to add state logic. After that was just building it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### What I learned
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This was my first time trying to build a frontendmentor challenge, it was a fun challenge. I was able to recap some knowledge I had gain a few months ago (when I did a full react udemy course).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I re-learned how to build a custom hook with the Fetch API and how to apply a context api.
 
-### `yarn eject`
+It was also my first time trying to do a Dark/light mode app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Continued development
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For the future I want to continue building some challenges from frontendmentor.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I want to understand what is the "best" way of sctructuring a big project and how to structure the styles in a clean way.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I want to try out styled components and other useful libraries like Formik and Next.js.
 
-## Learn More
+Also want to learn more about how to write clean code.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Things I Wish I Would Have Done
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Probably thought a little bit more about how to structure the filtering/app logic as well as the styles before I started!
 
-### Code Splitting
+## Outro
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Once again, feedback is welcome and appreciated! 😊
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Have a nice day! 😀
