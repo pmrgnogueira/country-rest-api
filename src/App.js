@@ -36,7 +36,6 @@ function App() {
 export default App;
 
 /**
- * TODO: Redo the Git repository
- * TODO: Do the Responsive
+ * TODO: No countries found
  * TODO: Preencher the deliveries
  */

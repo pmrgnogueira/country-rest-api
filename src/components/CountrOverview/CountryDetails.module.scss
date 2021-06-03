@@ -2,42 +2,79 @@
 
 .CountryDetail {
   @include transition;
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
+  flex-flow: column;
   width: 100%;
   height: 100%;
   font-size: var(--detail-page-fontsize);
   color: var(--color-text);
+
+  @include media('tablet') {
+    margin-top: 2rem;
+    flex-flow: row;
+  }
 }
 
 .Img {
-  width: 50%;
-  margin-right: 6rem;
+  width: 100%;
+  margin-right: 0;
+
+  @include media('tablet') {
+    width: 50%;
+    margin-right: 6rem;
+  }
 }
 
 .Info {
-  width: 50%;
+  width: 100%;
   align-self: center;
   color: inherit;
+
+  @include media('tablet') {
+    width: 50%;
+  }
 
   h1 {
     margin-bottom: 2rem;
     font-size: 2rem;
     font-weight: var(--fw-bold);
+    margin-top: 2.8rem;
+
+    @include media('tablet') {
+      margin-top: 0;
+    }
   }
 
   .Details {
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
-    height: 150px;
+    height: auto;
     margin-bottom: 2rem;
     margin-right: 20px;
     color: inherit;
 
-    p {
-      margin-bottom: 0.8rem;
+    @include media('large-tablet') {
+      height: 150px;
     }
+
+    p {
+      margin-bottom: 1.2rem;
+
+      &:nth-child(5) {
+        margin-bottom: 3rem;
+      }
+
+      @include media('large-tablet') {
+        margin-bottom: 0.8rem;
+
+        &:nth-child(5) {
+          margin-bottom: auto;
+        }
+      }
+    }
+
     span {
       font-weight: var(--fw-bold);
     }
@@ -49,9 +86,16 @@
     color: inherit;
 
     p {
-      font-weight: var(--fw-medium);
-      margin-right: 1.6rem;
+      font-weight: var(--fw-bold);
       align-self: baseline;
+      width: 100%;
+      margin-bottom: 1.4rem;
+
+      @include media('large-tablet') {
+        width: auto;
+        margin-bottom: auto;
+        margin-right: 1.6rem;
+      }
     }
 
     span {

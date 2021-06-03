@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import { FilteringContextProvider } from './store/filter-context';
-import './style-reset.scss';
 import './index.scss';
 import App from './App';
 

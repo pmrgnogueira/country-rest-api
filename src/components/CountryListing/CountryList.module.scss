@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 4rem;
-  padding: 0 5rem;
+  padding: 0 3rem;
 
   @include media('tablet') {
     padding: 0;

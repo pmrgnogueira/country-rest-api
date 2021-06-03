@@ -4,7 +4,7 @@ export const THEME = {
 };
 
 export const REGIONAL_BLOCK = [
-  'All',
+  'Filter by Region',
   'Asia',
   'Europe',
   'Africa',

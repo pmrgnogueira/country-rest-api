@@ -6,6 +6,7 @@ import CountryDetail from '../components/CountrOverview/CountryDetails';
 import Loading from '../components/Loading';
 import ErrorComponent from '../components/ErrorComponent';
 import useHttp from '../hooks/use-http';
+
 const REQUEST_URL = 'https://restcountries.eu/rest/v2/alpha/';
 
 const CountryDetails = () => {

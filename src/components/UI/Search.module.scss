@@ -7,8 +7,12 @@
   display: flex;
   align-items: center;
   padding: 1rem 1.4rem;
-  margin-bottom: 20px;
   color: var(--color-input);
+  width: calc(100% - 3rem);
+
+  @include media('tablet') {
+    width: auto;
+  }
 
   svg {
     flex-grow: 0;
