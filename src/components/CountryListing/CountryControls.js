@@ -32,7 +32,7 @@ const CountryControls = ({ onfilter }) => {
   const debouncedfunction = debouncer(searchHandler);
 
   return (
-    <section className={classes.Controlers}>
+    <div className={classes.Controlers}>
       <Search
         value={!isFilteredBySelect && filterTherm ? filterTherm : ''}
         onSearch={searchTherm => debouncedfunction(searchTherm)}
@@ -41,7 +41,7 @@ const CountryControls = ({ onfilter }) => {
         value={isFilteredBySelect && filterTherm ? filterTherm : ''}
         onSelect={searchTherm => searchHandler(searchTherm, true)}
       />
-    </section>
+    </div>
   );
 };
 

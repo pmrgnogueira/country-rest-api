@@ -1,7 +1,7 @@
 import classes from './Layout.module.scss';
 
 const Layout = ({ children }) => {
-  return <section className={classes.Layout}>{children}</section>;
+  return <div className={classes.Layout}>{children}</div>;
 };
 
 export default Layout;

@@ -8,7 +8,7 @@ const Select = ({ value, onSelect }) => {
 
   return (
     <div className={classes.Select}>
-      <select name='region' onChange={selectHandler} value={value}>
+      <select title='regions' onChange={selectHandler} value={value}>
         {REGIONAL_BLOCK.map(item => {
           return (
             <option key={item} value={item}>
