@@ -41,6 +41,8 @@ Also want to learn more about how to write clean code.
 
 Probably thought a little bit more about how to structure the filtering/app logic as well as the styles before I started!
 
+Another thing that I would like to re-visit in the future is the component interactions with the user mouse. Since my goal was to practice more the logic/api side of the project, I didn't do all the necessary interactions that usually are needed.
+
 ## Outro
 
 Once again, feedback is welcome and appreciated! 😊
