@@ -39,7 +39,7 @@ Also want to learn more about how to write clean code.
 
 ## Things I Wish I Would Have Done
 
-- Probably thought a little bit more about how to structure the filtering/app logic as well as the styles before I started!
+Probably thought a little bit more about how to structure the filtering/app logic as well as the styles before I started!
 
 ## Outro
 
