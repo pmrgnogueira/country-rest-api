@@ -1,6 +1,6 @@
-import classes from './Loading.module.scss';
+import classes from './LoadingComponent.module.scss';
 
-const Loading = () => {
+const LoadingComponent = () => {
   return (
     <div className={classes.Loading}>
       <div className={classes.Wrapper}>
@@ -13,4 +13,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingComponent;

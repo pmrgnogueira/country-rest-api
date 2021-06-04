@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import CountryListing from './pages/CountryListing';
-import CountryOverview from './pages/CountryOverview';
+import CountryDetailView from './pages/CountryDetailView';
 import Page404 from './pages/Page404';
 import Header from './components/Shared/Header';
 import classes from './App.module.scss';
@@ -23,7 +23,7 @@ function App() {
           <CountryListing />
         </Route>
         <Route path='/country/:id'>
-          <CountryOverview />
+          <CountryDetailView />
         </Route>
         <Route path='*'>
           <Page404 />

@@ -2,9 +2,9 @@ import { useEffect, useContext } from 'react';
 
 import CountryList from '../components/CountryListing/CountryList';
 import Layout from '../components/Shared/Layout';
-import CountryControls from '../components/CountryListing/CountryControls';
+import CountryFilter from '../components/CountryListing/CountryFilter';
 import FilteringContext from '../store/filter-context';
-import Loading from '../components/Shared/Loading';
+import LoadingComponent from '../components/Shared/LoadingComponent';
 import ErrorComponent from '../components/Shared/ErrorComponent';
 import useHttp from '../hooks/use-http';
 
@@ -44,8 +44,8 @@ const CountryListing = () => {
 
   return (
     <Layout>
-      <CountryControls countries={countries} onfilter={updatefilterCountries} />
-      {isLoading && <Loading />}
+      <CountryFilter countries={countries} onfilter={updatefilterCountries} />
+      {isLoading && <LoadingComponent />}
       {error && <ErrorComponent message={error} />}
       {emptyResults && <ErrorComponent message={'No Countries Found'} />}
       {showCountryList && <CountryList countries={countriesToList} />}
