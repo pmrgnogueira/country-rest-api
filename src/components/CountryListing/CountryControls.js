@@ -2,11 +2,12 @@ import { useContext } from 'react';
 
 import FilteringContext from '../../store/filter-context';
 import classes from './CountryControls.module.scss';
-import Search from '../UI/Search';
-import Select from '../UI/Select';
+import Search from './Search';
+import Select from './Select';
 import { debouncer } from '../../helper/debouncer';
 
 const CountryControls = ({ onfilter }) => {
+  console.log('CountryControls');
   const {
     countries,
     filterTherm,

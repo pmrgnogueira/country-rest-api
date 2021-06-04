@@ -2,6 +2,7 @@ import classes from './Select.module.scss';
 import { REGIONAL_BLOCK } from '../../helper/contants';
 
 const Select = ({ value, onSelect }) => {
+  console.log('Select');
   const selectHandler = e => {
     onSelect(e.target.selectedOptions[0].value);
   };

@@ -1,11 +1,11 @@
 import { useEffect, useContext } from 'react';
 
 import CountryList from '../components/CountryListing/CountryList';
-import Layout from '../components/Layout';
+import Layout from '../components/Shared/Layout';
 import CountryControls from '../components/CountryListing/CountryControls';
 import FilteringContext from '../store/filter-context';
-import Loading from '../components/Loading';
-import ErrorComponent from '../components/ErrorComponent';
+import Loading from '../components/Shared/Loading';
+import ErrorComponent from '../components/Shared/ErrorComponent';
 import useHttp from '../hooks/use-http';
 
 const REQUEST_URL =

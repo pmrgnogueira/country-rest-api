@@ -4,6 +4,7 @@ import { HiSearch } from 'react-icons/hi';
 import classes from './Search.module.scss';
 
 const Search = ({ value, onSearch }) => {
+  console.log('Search');
   const [searchResults, setSearchResults] = useState(value);
 
   const changeHandler = e => {

@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
 
-import LinkButton from '../UI/LinkButton';
+import LinkButton from './LinkButton';
 import classes from './CountryDetails.module.scss';
 import FilteringContext from '../../store/filter-context';
 
 const CountryDetail = ({ country }) => {
+  console.log('CountryDetail');
   const { countries } = useContext(FilteringContext);
   const {
     flag,

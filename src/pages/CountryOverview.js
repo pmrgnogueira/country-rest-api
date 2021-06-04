@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Layout from '../components/Layout';
+import Layout from '../components/Shared/Layout';
 import CountryDetail from '../components/CountrOverview/CountryDetails';
-import Loading from '../components/Loading';
-import ErrorComponent from '../components/ErrorComponent';
+import Loading from '../components/Shared/Loading';
+import ErrorComponent from '../components/Shared/ErrorComponent';
 import useHttp from '../hooks/use-http';
 
 const REQUEST_URL = 'https://restcountries.eu/rest/v2/alpha/';
