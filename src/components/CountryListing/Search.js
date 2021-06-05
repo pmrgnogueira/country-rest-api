@@ -1,16 +1,10 @@
-import { useState } from 'react';
 import { HiSearch } from 'react-icons/hi';
 
 import classes from './Search.module.scss';
 
 const Search = ({ value, onSearch }) => {
-  console.log('Search');
-  const [searchResults, setSearchResults] = useState(value);
-
   const changeHandler = e => {
-    const { value } = e.target;
-    setSearchResults(value);
-    onSearch(value);
+    onSearch(e.target.value);
   };
 
   return (
@@ -18,7 +12,7 @@ const Search = ({ value, onSearch }) => {
       <HiSearch />
       <input
         type='search'
-        value={searchResults}
+        value={value}
         name='country filter'
         aria-label='Filter the site flags'
         placeholder='Search for a country...'

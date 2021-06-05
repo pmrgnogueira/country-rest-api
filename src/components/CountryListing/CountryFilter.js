@@ -1,46 +1,68 @@
-import { useContext } from 'react';
+import { useContext, useCallback, useEffect } from 'react';
 
-import FilteringContext from '../../store/filter-context';
+import CountryContext from '../../store/country-context';
 import classes from './CountryFilter.module.scss';
 import Search from './Search';
 import Select from './Select';
-import { debouncer } from '../../helper/debouncer';
 
-const CountryFilter = ({ onfilter }) => {
-  console.log('CountryFilter');
+import { REGIONAL_BLOCK } from '../../helper/contants';
+
+const CountryFilter = () => {
   const {
     countries,
-    filterTherm,
-    filterHandler,
-    isFilteredBySelect,
-    selectHandler
-  } = useContext(FilteringContext);
+    setFilteredCountries,
+    searchTerm,
+    setSearchTerm,
+    selectedRegion,
+    setSelectedRegion
+  } = useContext(CountryContext);
 
-  const searchHandler = (searchTherm, isSelect) => {
-    const regex = new RegExp('^' + searchTherm, 'i');
-    const searchParam = isSelect ? 'region' : 'name';
-    const filteredContries = countries.filter(country =>
-      country[searchParam].match(regex)
-    );
+  const filterByRegion = useCallback((region, countries) => {
+    return countries.filter(country => {
+      return country.region.indexOf(region) === 0;
+    });
+  }, []);
 
-    let isEmptyResults = searchTherm && !filteredContries.length;
+  const filterByName = useCallback((name, countries) => {
+    return countries.filter(country => {
+      return country.name.toLowerCase().indexOf(name) === 0;
+    });
+  }, []);
 
-    onfilter(filteredContries, isEmptyResults);
-    selectHandler(isSelect);
-    filterHandler(searchTherm);
-  };
+  useEffect(() => {
+    if (!searchTerm && selectedRegion === REGIONAL_BLOCK[0]) {
+      setFilteredCountries(null);
+      return;
+    }
 
-  const debouncedfunction = debouncer(searchHandler);
+    let filteredCountries = countries;
+
+    if (selectedRegion && selectedRegion !== REGIONAL_BLOCK[0]) {
+      filteredCountries = filterByRegion(selectedRegion, filteredCountries);
+    }
+    if (searchTerm) {
+      filteredCountries = filterByName(searchTerm, filteredCountries);
+    }
+
+    setFilteredCountries(filteredCountries);
+  }, [
+    filterByName,
+    filterByRegion,
+    countries,
+    searchTerm,
+    selectedRegion,
+    setFilteredCountries
+  ]);
 
   return (
     <div className={classes.Controlers}>
       <Search
-        value={!isFilteredBySelect && filterTherm ? filterTherm : ''}
-        onSearch={searchTherm => debouncedfunction(searchTherm)}
+        value={searchTerm}
+        onSearch={searchValue => setSearchTerm(searchValue)}
       />
       <Select
-        value={isFilteredBySelect && filterTherm ? filterTherm : ''}
-        onSelect={searchTherm => searchHandler(searchTherm, true)}
+        value={selectedRegion}
+        onSelect={selectedValue => setSelectedRegion(selectedValue)}
       />
     </div>
   );

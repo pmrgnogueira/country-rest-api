@@ -1,11 +1,9 @@
 import { useState, useCallback } from 'react';
 
 const useHttp = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const sendRequest = useCallback(async (requesteURL, applyData) => {
-    setIsLoading(true);
+  const getCountries = useCallback(async (requesteURL, applyData) => {
     setError(null);
 
     try {
@@ -16,16 +14,13 @@ const useHttp = () => {
       }
 
       const data = await response.json();
-
       applyData(data);
     } catch (error) {
       setError(error.message || 'Something went wrong');
     }
-
-    setIsLoading(false);
   }, []);
 
-  return { isLoading, error, sendRequest };
+  return { error, getCountries };
 };
 
 export default useHttp;

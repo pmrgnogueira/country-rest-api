@@ -3,6 +3,8 @@
 .ErrorComponent {
   @include transition;
 
+  position: absolute;
+  width: 100%;
   text-align: center;
   color: var(--color-text);
   font-weight: var(--fw-medium);

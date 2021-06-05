@@ -3,7 +3,7 @@ import { useEffect, useContext } from 'react';
 import CountryList from '../components/CountryListing/CountryList';
 import Layout from '../components/Shared/Layout';
 import CountryFilter from '../components/CountryListing/CountryFilter';
-import FilteringContext from '../store/filter-context';
+import CountryContext from '../store/country-context';
 import LoadingComponent from '../components/Shared/LoadingComponent';
 import ErrorComponent from '../components/Shared/ErrorComponent';
 import useHttp from '../hooks/use-http';
@@ -12,43 +12,24 @@ const REQUEST_URL =
   'https://restcountries.eu/rest/v2/all?fields=name;capital;population;region;capital;flag;alpha2Code;alpha3Code;';
 
 const CountryListing = () => {
-  const {
-    updateCountries,
-    countries,
-    filteredCountries,
-    updateFilteredCountries,
-    emptyResults
-  } = useContext(FilteringContext);
-  const { isLoading, error, sendRequest: fetchCountries } = useHttp();
-  const countriesLength = countries.length;
+  const { countries, filteredCountries, setCountries } =
+    useContext(CountryContext);
+  const { error, getCountries } = useHttp();
 
   useEffect(() => {
-    if (countriesLength) return;
+    if (!countries) {
+      getCountries(REQUEST_URL, data => setCountries(data));
+    }
+  }, [countries, getCountries, setCountries]);
 
-    const transformCountries = data => {
-      const countriesWithAlpha = data.filter(country => country.alpha2Code);
-      updateCountries(countriesWithAlpha);
-    };
-
-    fetchCountries(REQUEST_URL, transformCountries);
-  }, [fetchCountries, countriesLength, updateCountries]);
-
-  const updatefilterCountries = (filtered, isEmpty) => {
-    updateFilteredCountries(filtered, isEmpty);
-  };
-
-  const countriesToList = filteredCountries.length
-    ? filteredCountries
-    : countries;
-  const showCountryList = !isLoading && !error && !emptyResults;
+  const countriesToList = filteredCountries ? filteredCountries : countries;
 
   return (
     <Layout>
-      <CountryFilter countries={countries} onfilter={updatefilterCountries} />
-      {isLoading && <LoadingComponent />}
+      <CountryFilter />
+      {!error && !countries && <LoadingComponent />}
       {error && <ErrorComponent message={error} />}
-      {emptyResults && <ErrorComponent message={'No Countries Found'} />}
-      {showCountryList && <CountryList countries={countriesToList} />}
+      {countries && <CountryList countries={countriesToList} />}
     </Layout>
   );
 };

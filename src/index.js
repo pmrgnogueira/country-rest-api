@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import { FilteringContextProvider } from './store/filter-context';
+import { CountryContextProvider } from './store/country-context';
 import './index.scss';
 import App from './App';
 
 ReactDOM.render(
   <BrowserRouter>
-    <FilteringContextProvider>
+    <CountryContextProvider>
       <App />
-    </FilteringContextProvider>
+    </CountryContextProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

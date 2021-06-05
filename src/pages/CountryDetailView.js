@@ -12,17 +12,17 @@ const REQUEST_URL = 'https://restcountries.eu/rest/v2/alpha/';
 const CountryDetailView = () => {
   const [country, setCountry] = useState(null);
   const { id } = useParams();
-  const { isLoading, error, sendRequest: fetchCountry } = useHttp();
+  const { error, getCountries } = useHttp();
 
   useEffect(() => {
-    fetchCountry(REQUEST_URL + id, data => setCountry(data));
-  }, [fetchCountry, id]);
+    getCountries(REQUEST_URL + id, data => setCountry(data));
+  }, [getCountries, id, setCountry]);
 
   return (
     <Layout>
-      {isLoading && <LoadingComponent />}
+      {!error && !country && <LoadingComponent />}
       {error && <ErrorComponent message={error} />}
-      {!isLoading && !error && country && <CountryDetail country={country} />}
+      {!error && country && <CountryDetail country={country} />}
     </Layout>
   );
 };

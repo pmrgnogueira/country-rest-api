@@ -3,11 +3,10 @@ import { HiOutlineArrowNarrowLeft } from 'react-icons/hi';
 
 import LinkButton from './LinkButton';
 import classes from './CountryDetails.module.scss';
-import FilteringContext from '../../store/filter-context';
+import CountryContext from '../../store/country-context';
 
 const CountryDetail = ({ country }) => {
-  console.log('CountryDetail');
-  const { countries } = useContext(FilteringContext);
+  const { countries } = useContext(CountryContext);
   const {
     flag,
     name,
@@ -22,7 +21,7 @@ const CountryDetail = ({ country }) => {
     borders
   } = country;
 
-  function getBorderTags(borders) {
+  function countryBordersLinks(borders) {
     return borders.map(border => {
       const borderCountry = countries.filter(c => {
         return c.alpha3Code === border;
@@ -35,6 +34,17 @@ const CountryDetail = ({ country }) => {
         </LinkButton>
       );
     });
+  }
+
+  let countryBorders = null;
+
+  if (borders.length && countries) {
+    countryBorders = (
+      <div className={classes.Borders}>
+        <p>Border Countries:</p>
+        {countryBordersLinks(borders)}
+      </div>
+    );
   }
 
   return (
@@ -83,12 +93,7 @@ const CountryDetail = ({ country }) => {
               {languages.map(lang => lang.name).join(', ')}
             </p>
           </div>
-          {borders.length && countries.length ? (
-            <div className={classes.Borders}>
-              <p>Border Countries:</p>
-              {getBorderTags(borders)}
-            </div>
-          ) : null}
+          {countryBorders}
         </div>
       </div>
     </>
